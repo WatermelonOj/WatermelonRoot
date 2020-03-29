@@ -54,11 +54,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${maven-deploy-plugin.version}</version>
                 <configuration>
@@ -66,7 +61,6 @@
                     </altDeploymentRepository>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
@@ -83,7 +77,6 @@
                     <repositoryName>MavenRepo</repositoryName>
                     <repositoryOwner>WatermelonOj</repositoryOwner>
                 </configuration>
-
                 <executions>
                     <execution>
                         <goals>
@@ -93,8 +86,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
