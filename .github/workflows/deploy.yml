@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   deploy:
-    if: github.repository == 'Acerkoo/hello-ci'
+    if: github.repository == 'WatermelenOJ/WatermelonRoot'
      
     strategy:
       matrix:
