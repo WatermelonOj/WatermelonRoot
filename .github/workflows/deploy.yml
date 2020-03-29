@@ -4,25 +4,13 @@ on: [push]
 
 jobs:
   deploy:
-    if: github.repository == 'Acerkoo/hello-ci'
-     
     strategy:
       matrix:
         jdk_version: [11]
         mvn_action: [package]
         mysql_version: [5.7]
         os: [ubuntu-latest]
-         
-    services:
-      mysql:
-        image: mysql:${{ matrix.mysql_version }}
-        env: 
-          MYSQL_USER: username
-          MYSQL_PASSWORD: password
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: szk
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-        
+       
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -40,14 +28,4 @@ jobs:
         run: |
           mvn --settings .github/settings.xml \
               --file pom.xml \
-              -Dspring.config.location=docker/config/application.yml \
               deploy
-
-      - name: publish docker
-        uses: Acerkoo/Publish-Docker-Github-Action@2.7.1
-        with:
-          name: registry.cn-hangzhou.aliyuncs.com/imewalker/test:latest
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: registry.cn-hangzhou.aliyuncs.com
-          dockerfile: Dockerfile
