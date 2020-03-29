@@ -5,6 +5,7 @@ on: [push]
 jobs:
   deploy:
     if: github.repository == 'WatermelonOj/WatermelonRoot'
+
     strategy:
       matrix:
         jdk_version: [11]
