@@ -80,8 +80,8 @@
                     <includes>
                         <include>**/*</include>
                     </includes>
-                    <repositoryName>maven-repo</repositoryName>
-                    <repositoryOwner>Acerkoo</repositoryOwner>
+                    <repositoryName>MavenRepo</repositoryName>
+                    <repositoryOwner>WatermelonOj</repositoryOwner>
                 </configuration>
 
                 <executions>
