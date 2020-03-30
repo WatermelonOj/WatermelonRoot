@@ -78,7 +78,7 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>test-${project.version}</file>
+                                    <file>${project.version}</file>
                                     <type>jar</type>
                                 </artifact>
                             </artifacts>
